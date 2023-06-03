@@ -7,9 +7,9 @@ export const columns = () => {
   const navigate = useNavigate();
   return [
     {
-      title: 'Tên khách hàng',
+      title: 'Địa chỉ',
       key: '1',
-      dataIndex: 'name',
+      dataIndex: 'address',
     },
     {
       title: 'Email',
