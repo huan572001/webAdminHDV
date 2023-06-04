@@ -1,4 +1,4 @@
-import Vite from '@/assets/logohonda.png';
+import Vite from '@/assets/logo.png';
 import { loginError } from '@/components/AccountModal/Modal';
 import { useAuth } from '@/context/AuthProvider';
 import { AuthService } from '@/services';
@@ -43,7 +43,7 @@ const Login = () => {
         <div className="form-Login">
           <div className="logo">
             <img alt="logo" src={Vite} />
-            <span>HEAD HONDA MAN THIỆ1N</span>
+            <span>Cửa hàng bán trái cây</span>
           </div>
           <Form onFinish={onFinished}>
             <FormItem name="username" rules={[{ required: true }]} hasFeedback>
