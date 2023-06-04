@@ -104,7 +104,15 @@ export const showConfirmError = () => {
     buttons: 'Đồng ý',
   });
 };
-
+export const showError = () => {
+  swal({
+    title: 'Thực hiện thất bại',
+    text: `Thất bại`,
+    icon: 'error',
+    // dangerMode: true,
+    buttons: 'Đồng ý',
+  });
+};
 export const showDeleteBanner = (name, onAccept) => {
   swal({
     title: `Bạn có muốn xóa banner này?`,

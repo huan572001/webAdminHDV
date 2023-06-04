@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
 import { columns } from './columns';
-import { getOrdered } from '../handal';
+import { getOrderConfirm } from '../handal';
 import { listProductByOrderID } from '@/pages/User/listOrder/listProductOrder';
 
-const index = ({ load }) => {
+const index = ({ setLoadTab }) => {
   const [data, setdata] = useState([]);
+  const [load, setLoad] = useState(true);
+
   useEffect(() => {
-    getOrdered(setdata);
+    if (load) {
+      getOrderConfirm(setdata);
+      setLoad(false);
+      setLoadTab((tab) => (tab += 1));
+    }
   }, [load]);
   return (
     <div>
       <Table
-        columns={columns()}
+        columns={columns(setLoad)}
         dataSource={data}
         rowKey="id"
         onRow={(record) => ({

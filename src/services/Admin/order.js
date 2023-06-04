@@ -14,4 +14,20 @@ export const OrderAPI = {
     const url = `/${ADMIN_API_PATH}/edit-product/${id}`;
     return axiosClient.put(url, data);
   },
+  getOrderCancel: async () => {
+    const url = `/${ADMIN_API_PATH}/order-false`;
+    return axiosClient.get(url);
+  },
+  getOrderConfirm: async () => {
+    const url = `/${ADMIN_API_PATH}/all-order`;
+    return axiosClient.get(url);
+  },
+  cancelOrder: async (id) => {
+    const url = `/${ADMIN_API_PATH}/accept-orderf/${id}`;
+    return axiosClient.put(url);
+  },
+  confirmOrder: async (id) => {
+    const url = `/${ADMIN_API_PATH}/accept-ordert/${id}`;
+    return axiosClient.put(url);
+  },
 };

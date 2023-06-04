@@ -1,18 +1,22 @@
 import { Tabs } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import Ordered from './Ordered';
+import OrderCansel from './OrderCancel';
+import OrderConfirm from './OrderConfirm';
 const index = () => {
+  const [load, setLoad] = useState(1);
   return (
     <>
+      <h1>Quản lý đơn hàng</h1>
       <Tabs>
         <Tabs.TabPane tab="Đã xác nhận" key="1">
-          <Ordered />
+          <Ordered load={load} />
         </Tabs.TabPane>
-        {/* <Tabs.TabPane tab="MENTOR CHỜ DUYỆT" key="2">
-      <MentorPending />
-    </Tabs.TabPane> */}
-        <Tabs.TabPane tab="Chờ duyệt" key="3">
-          {/* <User role={5} reload={reLoad} /> */}
+        <Tabs.TabPane tab="Chờ xác nhận" key="2">
+          <OrderConfirm setLoadTab={setLoad} />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab="Đã hủy" key="3">
+          <OrderCansel load={load} />
         </Tabs.TabPane>
       </Tabs>
     </>

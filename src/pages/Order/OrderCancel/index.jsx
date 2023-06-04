@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
 import { columns } from './columns';
-import { getOrdered } from '../handal';
+import { getOrderCancel } from '../handal';
 import { listProductByOrderID } from '@/pages/User/listOrder/listProductOrder';
 
 const index = ({ load }) => {
   const [data, setdata] = useState([]);
   useEffect(() => {
-    getOrdered(setdata);
+    getOrderCancel(setdata);
   }, [load]);
   return (
     <div>

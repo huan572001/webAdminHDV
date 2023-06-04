@@ -1,4 +1,4 @@
-import dashboard from "@/assets/logo1.png";
+import dashboard from '@/assets/logo.png';
 const Dashboard = () => {
   return (
     <>
@@ -15,18 +15,18 @@ const Dashboard = () => {
         /> */}
         <p
           style={{
-            fontSize: "40px",
-            display: "flex",
-            justifyContent: "center",
-            color: "red",
+            fontSize: '40px',
+            display: 'flex',
+            justifyContent: 'center',
+            color: 'red',
           }}
         >
-          Cửa hàng bảo hành xe máy Man Thiện
+          Cửa hàng bán trái cây
         </p>
         <img
           style={{
-            height: "450px",
-            width: "1110px",
+            height: '450px',
+            width: '1110px',
           }}
           src={dashboard}
           alt="Hình ảnh DashBoard"
