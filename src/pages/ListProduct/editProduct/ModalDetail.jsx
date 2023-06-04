@@ -1,13 +1,17 @@
-import { Button, Col, Form, Input, Modal, Row } from 'antd';
+import { Button, Col, Form, Input, Modal, Row, Select } from 'antd';
 import './ModalDetail.less';
 import { product } from '@/assets';
 import { useState } from 'react';
 import { editProduct } from '../handal';
+import ImgCourse from '@/components/img';
 const { TextArea } = Input;
 const FormProduct = ({ info }) => {
   const [open, setOpen] = useState(true);
   const onFinish = (values) => {
-    editProduct(info?.id, { ...values, category_id: info?.category_id });
+    editProduct(info?.id, {
+      ...values,
+      category_id: info?.category_id,
+    });
   };
   return (
     <>
@@ -25,7 +29,7 @@ const FormProduct = ({ info }) => {
           onFinish={onFinish}
           initialValues={{
             name: info?.name,
-            status: info?.status ? 'Hiển thị' : 'Ẩn',
+            status: info?.status,
             price_in: info?.price_in,
             price_sell: info?.price_sell,
             quantity: info?.quantity,
@@ -46,7 +50,10 @@ const FormProduct = ({ info }) => {
             </Col>
             <Col span={13}>
               <Form.Item label="Trạng thái" name="status">
-                <Input />
+                <Select>
+                  <Select.Option value={true}>Hiển thị</Select.Option>
+                  <Select.Option value={false}>Ẩn</Select.Option>
+                </Select>
               </Form.Item>
             </Col>
           </Row>
@@ -57,12 +64,12 @@ const FormProduct = ({ info }) => {
                 label="Giá nhập"
                 name="price_in"
               >
-                <Input />
+                <Input type="number" />
               </Form.Item>
             </Col>
             <Col span={13}>
               <Form.Item label="Giá bán" name="price_sell">
-                <Input />
+                <Input type="number" />
               </Form.Item>
             </Col>
           </Row>
@@ -73,7 +80,7 @@ const FormProduct = ({ info }) => {
                 label="số lượng tồn"
                 name="quantity"
               >
-                <Input />
+                <Input type="number" />
               </Form.Item>
             </Col>
             <Col span={13}>
@@ -83,7 +90,7 @@ const FormProduct = ({ info }) => {
             </Col>
           </Row>
           <Form.Item label="Giảm giá" name="discout">
-            <Input />
+            <Input type="number" />
           </Form.Item>
           <Form.Item label="Mô tả" name="content">
             <TextArea rows={4} />

@@ -19,7 +19,7 @@ export const deleteProduct = async (id) => {
 export const editProduct = async (id, data) => {
   try {
     const a = await ProductAPI.editProduct(id, data);
-    if (a?.success) {
+    if (a) {
       showConfirmSuccess();
     } else {
       showConfirmError();
