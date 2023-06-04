@@ -20,7 +20,13 @@ const index = () => {
   };
   return (
     <div>
-      <h1>Danh sach san pham</h1>
+      <h1
+        style={{
+          fontSize: '40px',
+        }}
+      >
+        Danh sach san pham
+      </h1>
       <Table
         columns={columns()}
         dataSource={data}

@@ -1,24 +1,16 @@
 import { useAuth } from '@/context/AuthProvider';
 import {
-  ApartmentOutlined,
-  AuditOutlined,
-  BarChartOutlined,
-  ContactsOutlined,
-  DatabaseOutlined,
-  DollarOutlined,
-  FileAddOutlined,
-  FolderOpenOutlined,
   HomeOutlined,
-  TeamOutlined,
+  InboxOutlined,
+  UnorderedListOutlined,
   UserAddOutlined,
-  WalletOutlined,
 } from '@ant-design/icons';
 // import { Books, BellRing, Stack, User } from '@/assets';
 const LayoutAdmin = [
   {
     label: 'Quản lý sản phâm',
     key: 'ListProduct',
-    icon: <UserAddOutlined />,
+    icon: <UnorderedListOutlined />,
   },
   {
     label: 'Quản lý người dùng',
@@ -28,7 +20,7 @@ const LayoutAdmin = [
   {
     label: 'Quản lý đơn hàng',
     key: 'ListOrder',
-    icon: <UserAddOutlined />,
+    icon: <InboxOutlined />,
   },
 ];
 const LayoutUser = [];

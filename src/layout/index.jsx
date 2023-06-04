@@ -1,6 +1,6 @@
 import { getFirstPathCode } from '@/utils/getFirstPathCode';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { Breadcrumb, Card, Layout, Menu } from 'antd';
+import { Breadcrumb, Card, Layout, Menu, Spin } from 'antd';
 import React, { Suspense, useEffect, useState } from 'react';
 import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 import HeaderComponent from './Header';
@@ -19,6 +19,7 @@ const LayoutPage = () => {
   // const [collapsed, setCollapsed] = useState(false);
   const [openKey, setOpenkey] = useState();
   const [selectedKey, setSelectedKey] = useState(location.pathname);
+  const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
     const code = getFirstPathCode(location.pathname);
@@ -28,10 +29,19 @@ const LayoutPage = () => {
 
   return (
     <Layout className="main-layout-page" hasSider>
-      {/* <Sider className="sider" trigger={null} collapsible collapsed={collapsed}> */}
-      <Sider className="sider">
-        <div className="logo">
-          <img style={{}} alt="logo" src={Logo} />
+      <Sider
+        className="sider"
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+        width={270}
+      >
+        <div className={'logo '}>
+          <img alt="logo" src={Logo} />
+          <div className={collapsed ? 'hidden' : '' + 'logoName'}>
+            <div className={'name'}>BanTraiCay</div>
+            <div className={'hastag'}>#HHP</div>
+          </div>
         </div>
         <Menu
           className="menu"
@@ -41,31 +51,41 @@ const LayoutPage = () => {
               ? navigate(routerLinks('Login'), { replace: true })
               : navigate(routerLinks(info.key));
           }}
-          theme="#c00"
+          theme="#224922"
           mode="inline"
           items={listMenu()}
         />
       </Sider>
       <Layout className="site-layout" width="400px">
-        {/* <HeaderComponent collapsed={collapsed} handleCollapsed={setCollapsed} /> */}
-        <HeaderComponent />
+        <HeaderComponent collapsed={collapsed} handleCollapsed={setCollapsed} />
+        {/* <HeaderComponent /> */}
 
-        <Suspense fallback={<h1>Loading post...</h1>}>
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center flex-1">
+              <Spin size="large" />
+            </div>
+          }
+        >
           <Layout
             style={{
-              padding: '0 24px 24px',
               backgroundColor: '#F3F4F6',
             }}
           >
-            <Breadcrumb style={{ margin: '16px 0' }}></Breadcrumb>
-            {/*  */}
+            {/* <Breadcrumb style={{ margin: '16px 0' }}></Breadcrumb> */}
             <Content
-              className="hihi main-layout-page-content"
-              style={{ overflow: 'auto' }}
+              className="main-layout-page-content"
+              // style={{ overflow: 'auto' }}
             >
-              <Card>
+              <div
+                style={{
+                  padding: '24px',
+                  height: '100%',
+                  overflow: 'auto',
+                }}
+              >
                 <Outlet />
-              </Card>
+              </div>
             </Content>
           </Layout>
         </Suspense>

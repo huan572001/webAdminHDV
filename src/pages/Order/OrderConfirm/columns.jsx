@@ -24,8 +24,8 @@ export const columns = (setLoad) => {
       dataIndex: 'user_id',
     },
     {
-      title: 'UserId',
-      key: '2',
+      title: 'Hoạt động',
+      key: '6',
       render: (_, info) => (
         <>
           <CheckOutlined

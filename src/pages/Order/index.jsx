@@ -7,7 +7,14 @@ const index = () => {
   const [load, setLoad] = useState(1);
   return (
     <>
-      <h1>Quản lý đơn hàng</h1>
+      <h1
+        style={{
+          fontSize: '40px',
+        }}
+      >
+        {' '}
+        Quản lý đơn hàng
+      </h1>
       <Tabs>
         <Tabs.TabPane tab="Đã xác nhận" key="1">
           <Ordered load={load} />

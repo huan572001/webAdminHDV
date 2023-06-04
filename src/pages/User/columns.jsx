@@ -32,7 +32,7 @@ export const columns = () => {
       render: (_, info) => <>{info?.gender ? <>Nam</> : <>Nư</>}</>,
     },
     {
-      title: 'Giới tính',
+      title: 'Hoạt động',
       key: '4',
       render: (_, info) => (
         <>

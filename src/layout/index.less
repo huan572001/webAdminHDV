@@ -22,10 +22,9 @@
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 15px;
       cursor: pointer;
-      display: none;
     }
 
     &-main {
@@ -37,20 +36,28 @@
     }
   }
   .logo {
-    // height: 64px;
-    // width: 200px;
-    // box-sizing: border-box;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // z-index: 9;
+    width: 152px;
+    display: flex;
+    font-family: 'Coda';
+    color: #e7e7e7;
+    .logoName {
+      margin-top: 22px;
+      margin-left: 2px;
+      line-height: 1.5rem;
 
+      .name {
+        font-size: 25px;
+      }
+      .hastag {
+        font-size: 20px;
+      }
+    }
     img {
       margin-bottom: 24px;
-      margin-left: 54px;
+      margin-left: 24px;
       margin-top: 24px;
-      width: 152px;
-      height: 110px;
+      width: 42px;
+      height: 42px;
     }
   }
   &-sider {
@@ -58,27 +65,10 @@
     margin-bottom: 10px;
   }
   &-content {
-    // background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    > :nth-child(1) .ant-tabs-bar {
-      padding: 6px 0 0;
-    }
-
-    > :nth-child(2) {
-      flex: auto;
-      overflow: hidden;
-      padding: 6px;
-      box-sizing: border-box;
-      .innerText {
-        padding: 24px;
-        border-radius: 2px;
-        display: block;
-        line-height: 32px;
-        font-size: 16px;
-      }
-    }
+    padding: 0px;
+    margin: 0px;
+    min-height: 280;
+    overflow: 'hidden';
   }
   &-footer {
     text-align: center;
@@ -117,39 +107,52 @@
   }
 }
 .sider {
-  background: #fff;
-  border-radius: 0px 0px 0px 0px;
-  min-width: 270px !important;
+  background: #224922;
+  border-radius: 0px 24px 0px 0px;
   .ant-menu {
     color: #ffffff;
   }
   .menu {
-    background-color: #fff;
+    background-color: #224922;
     border: none;
     width: 95%;
     overflow: auto;
-    height: 80vh;
+    height: 87vh;
     font-size: 16px;
     &::-webkit-scrollbar {
       display: none;
     }
+    .ant-menu-submenu-arrow {
+      color: #ffffff;
+    }
+
+    .ant-menu-submenu {
+      :hover {
+        .ant-menu-submenu-arrow {
+          color: #000000 !important;
+        }
+      }
+    }
     .ant-menu-item-selected {
       border-radius: 8px;
-      background: #c02b2b;
-      color: #d03434;
+      background: #2c662c;
+      color: #7bc45a;
     }
     .ant-menu-submenu-selected {
-      color: #c45a68;
+      color: #7bc45a;
     }
     .ant-menu-item::after {
       border-right: none !important;
       // border-left: 3px solid #1890ff !important;
     }
     .ant-menu-item-icon {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
       width: 24px;
       height: 24px;
-      color: #000;
-      margin-top: 11px;
     }
     .ant-menu-inline .ant-menu-item {
       // padding-left: 24px !important;
@@ -157,29 +160,26 @@
       width: 87%;
     }
     .ant-menu-item:focus::before {
-      content: "";
+      content: '';
       display: inline-block;
       position: absolute;
       left: 2.34%;
       width: 4px;
       height: 16px;
       right: 91.41%;
-      background-color: #ff0000;
+      background-color: #7bc45a;
       border-radius: 4px;
       // margin-left: -5px;
       // border-right: none !important;
       // border-left: 3px solid #1890ff !important;
     }
     .ant-menu-sub {
-      background: rgb(255, 255, 255) !important;
+      background: #224922 !important;
       font-size: 16px;
     }
     .ant-menu-item-active {
       border-radius: 8px;
-      background: #c00;
-    }
-    .ant-menu-title-content {
-      color: #000;
+      background: #2c662c;
     }
   }
 }

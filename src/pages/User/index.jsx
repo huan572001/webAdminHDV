@@ -11,7 +11,13 @@ const index = () => {
   }, []);
   return (
     <div>
-      <h1>Danh sách khách hàng</h1>
+      <h1
+        style={{
+          fontSize: '40px',
+        }}
+      >
+        Danh sách khách hàng
+      </h1>
       <Table
         columns={columns()}
         dataSource={data}
